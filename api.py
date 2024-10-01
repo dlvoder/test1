@@ -9,20 +9,20 @@ CORS(app)
 
 @app.route('/api/search', methods=['GET'])
 def search_images():
-    '''query = request.args.get('q', '')
+    query = request.args.get('q', '')
     print(query)
     if not query:
-        return jsonify(['reberto'])'''
+        return jsonify([])
     query = 'get me my proof on supremum'
     openai.api_key = os.getenv('OPENAI_API_KEY')
     directory = r"C:\Users\dmitr\test1\descriptions"
-    file_contents = ['filename: 2222222222222.jpg, description: The image displays handwritten mathematical work on lined paper. The topic appears to be related to the supremum (sup) and infimum (inf) of sets. Detailed descriptions of each step are given, with logical derivations shown clearly.']
+    file_contents = []
 
-    '''for filename in os.listdir(directory):
+    for filename in os.listdir(directory):
         if filename.endswith(".txt"):
             with open(os.path.join(directory, filename), 'r') as file:
                 content = file.read()
-                file_contents.append(f"Filename: {filename}\nContent:\n{content}")'''
+                file_contents.append(f"Filename: {filename}\nContent:\n{content}")
 
     response = openai.chat.completions.create(
         model='gpt-4o', 
