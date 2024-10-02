@@ -13,9 +13,9 @@ def search_images():
     print(query)
     if not query:
         return jsonify([])
-    query = 'get me my proof on supremum'
+        
     openai.api_key = os.getenv('OPENAI_API_KEY')
-    directory = r"C:\Users\dmitr\test1\descriptions"
+    directory = 'descriptions'
     file_contents = []
 
     for filename in os.listdir(directory):
