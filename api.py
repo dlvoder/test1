@@ -5,7 +5,7 @@ import openai
 import re
 
 app = Flask(__name__)
-CORS(app, origins='https://dmitrilvovich.github.io')
+CORS(app)
 
 @app.route('/api/search', methods=['GET'])
 def search_images():
